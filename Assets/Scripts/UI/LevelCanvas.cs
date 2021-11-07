@@ -26,8 +26,10 @@ namespace Platformer.UI
 
             PlayerDeath.OnExecute += PlayerDiedCallback;
             PlayerEnteredVictoryZone.OnExecute += PlayerWonCallback;
-            
+
             GameDatabase.Instance.ResetScore();
+
+            lblUsername.text = GameDatabase.Instance.CurrentUser.Username;
         }
 
         private void OnDestroy()

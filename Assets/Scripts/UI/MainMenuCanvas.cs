@@ -10,6 +10,8 @@ namespace Platformer.UI
     {
         [SerializeField] private TMP_InputField inputUsername;
         [SerializeField] private Button btnPlay;
+        [SerializeField] private Sprite btnEnabledSprite;
+        [SerializeField] private Sprite btnDisabledSprite;
 
         private static MainMenuCanvas _instance;
         public static MainMenuCanvas Instance => _instance;
@@ -20,7 +22,8 @@ namespace Platformer.UI
 
             inputUsername.onValueChanged.AddListener(OnUsernameInputChanged);
             inputUsername.text = GameDatabase.Instance.CurrentUser.Username;
-            btnPlay.enabled = false;
+            ChangeBtnPlayEnableState(false);
+            inputUsername.text = "";
         }
 
         private void OnDestroy()
@@ -43,9 +46,10 @@ namespace Platformer.UI
         public void ChangeBtnPlayEnableState(bool state)
         {
             btnPlay.enabled = state;
+            btnPlay.GetComponent<Image>().sprite = state ? btnEnabledSprite : btnDisabledSprite;
         }
         public void BtnPlayClicked()
-        {
+        { 
             SceneManager.LoadScene("Assets/Scenes/LevelScene.unity", LoadSceneMode.Single);
         }
 

@@ -1395,3 +1395,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputUsername: {fileID: 1214248945}
   btnPlay: {fileID: 1094508487}
+  btnEnabledSprite: {fileID: 21300000, guid: 7a8a3747a7ad88f48b42e23756aac0a9, type: 3}
+  btnDisabledSprite: {fileID: 21300000, guid: 77256a6d932f3ec4bbff903ea9062274, type: 3}

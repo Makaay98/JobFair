@@ -10,8 +10,8 @@ namespace Platformer.UI
     {
         [SerializeField] private TMP_InputField inputUsername;
         [SerializeField] private Button btnPlay;
-        [SerializeField] private Sprite btnEnabledSprite;
-        [SerializeField] private Sprite btnDisabledSprite;
+        [SerializeField] private Sprite btnEnabledSprite;//btn-primary
+        [SerializeField] private Sprite btnDisabledSprite;//btn-secondary
 
         private static MainMenuCanvas _instance;
         public static MainMenuCanvas Instance => _instance;

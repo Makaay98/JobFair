@@ -2,7 +2,7 @@
 
 -Mechanic "Ultimate Strike XD" 
 Description: 
-Using mouse(RMB), player can destroy enemies on range.
+Using mouse(LMB), player can destroy enemies on range.
 cost: Player need to have enough tokens(3).
 cooldown: After every 'shot', cool down starts(3s).
 

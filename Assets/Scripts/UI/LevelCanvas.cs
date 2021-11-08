@@ -2,6 +2,7 @@ using Platformer.Gameplay;
 using Platformer.Model;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Platformer.UI
 {
@@ -14,9 +15,10 @@ namespace Platformer.UI
         [SerializeField] private TMP_Text lblTokens;
         [SerializeField] private TMP_Text lblEnemiesKilled;
         [SerializeField] private TMP_Text lblUsername;
+        [SerializeField] private Image panelUltimateStrike;
         #endregion Fields and Properties
-        
-        
+
+
         private static LevelCanvas _instance;
         public static LevelCanvas Instance => _instance;
 
@@ -30,6 +32,7 @@ namespace Platformer.UI
             GameDatabase.Instance.ResetScore();
 
             lblUsername.text = GameDatabase.Instance.CurrentUser.Username;
+            panelUltimateStrike.color = Color.red;
         }
 
         private void OnDestroy()
@@ -59,6 +62,11 @@ namespace Platformer.UI
         public void BtnPauseClicked()
         {
             pauseMenu.Show();
+        }
+
+        public void UltimateStrikeState(bool state)
+        {
+            panelUltimateStrike.color = state ? Color.green : Color.red;
         }
 
         #endregion Event Handlers

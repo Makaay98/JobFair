@@ -16,6 +16,7 @@ public class UltimateClickStrike : MonoBehaviour
     [SerializeField] private LayerMask layermask;
 
     [SerializeField] private ParticleSystem particle;
+    [SerializeField] private AudioClip hitSound;
 
     [SerializeField] private bool canStrike;
     void Start()
@@ -49,8 +50,10 @@ public class UltimateClickStrike : MonoBehaviour
             //Debug.Log(hit.collider.transform.position);
             if (hit.collider.gameObject.GetComponent<EnemyController>())
             {
-                Destroy(hit.collider.gameObject);
-                GameDatabase.Instance.CurrentUser.EnemiesKilled++;
+                hit.collider.gameObject.GetComponent<AudioSource>().clip = hitSound;
+                hit.collider.gameObject.GetComponent<AudioSource>().Play();
+                Destroy(hit.collider.gameObject, 0.3f);
+                GameDatabase.Instance.CurrentUser.EnemiesKilled++;              
             } 
         }
 

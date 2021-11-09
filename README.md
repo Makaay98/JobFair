@@ -1,3 +1,11 @@
+<h4>Added:</h4>
+
+-Mechanic "Ultimate Strike XD" 
+Description: 
+Using mouse(LMB), player can destroy enemies on range.
+cost: Player need to have enough tokens(3).
+cooldown: After every 'shot', cool down starts(3s).
+
 <h4>Setup:</h4>
 
 - [Install Unity 2020.3.15f2](https://unity3d.com/get-unity/download/archive)
